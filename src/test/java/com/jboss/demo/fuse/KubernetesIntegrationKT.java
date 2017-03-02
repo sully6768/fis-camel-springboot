@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 
-package com.jboss.demo.fis;
+package com.jboss.demo.fuse;
 
 import io.fabric8.kubernetes.client.KubernetesClient;
 
