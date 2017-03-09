@@ -16,6 +16,7 @@
 package com.jboss.demo.fuse;
 
 import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.impl.DefaultCamelContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
@@ -34,7 +35,9 @@ public class Application extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("timer://foo?period=5000")
+    	((DefaultCamelContext)this.getContext()).setName("camel-context-1");
+        from("timer://foo1?period=5000")
+        	.id("route-1")
             .setBody().constant("Hello World")
             .log(">>> ${body}");
     }

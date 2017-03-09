@@ -7,12 +7,12 @@
 
     <!-- You could also define a traditional camel context here -->
     <!--
-    <camelContext xmlns="http://camel.apache.org/schema/spring">
-        <route>
-            <from uri="timer://foo?period=1000"/>
-            <setBody><simple>Hello World from camel-contex.xml</simple></setBody>
+    -->
+    <camelContext xmlns="http://camel.apache.org/schema/spring" id="camel-context-2">
+        <route id="route-2">
+            <from uri="timer://foo2?period=1000"/>
+            <setBody><simple>And Hello World from camel-contex.xml</simple></setBody>
             <log message=">>> ${body}"/>
         </route>
     </camelContext>
-    -->
 </beans>
