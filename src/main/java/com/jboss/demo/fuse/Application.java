@@ -15,30 +15,19 @@
  */
 package com.jboss.demo.fuse;
 
-import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.impl.DefaultCamelContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ImportResource;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 /**
  * A spring-boot application that includes a Camel route builder to setup the Camel routes
  */
 @SpringBootApplication
-@ImportResource({"classpath:spring/camel-context.xml"})
-public class Application extends RouteBuilder {
+//@ImportResource({"classpath:spring/camel-context.xml"})
+public class Application extends SpringBootServletInitializer {
 
     // must have a main method spring-boot can run
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
-    }
-
-    @Override
-    public void configure() throws Exception {
-    	((DefaultCamelContext)this.getContext()).setName("camel-context-1");
-        from("timer://foo1?period=5000")
-        	.id("route-1")
-            .setBody().constant("Hello World")
-            .log(">>> ${body}");
     }
 }

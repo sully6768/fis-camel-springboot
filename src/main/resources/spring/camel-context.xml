@@ -4,13 +4,13 @@
     <!-- You could also define a traditional camel context here -->
     <!--
     -->
-    <camelContext id="camel-context-2" xmlns="http://camel.apache.org/schema/spring">
-        <route id="route-2">
-            <from id="_from1" uri="timer://foo2"/>
-            <setBody id="_setBody1">
-                <simple>And Hello World from camel-contex.xml</simple>
-            </setBody>
-            <log id="_log1" message=">>> ${body}"/>
-        </route>
-    </camelContext>
+<!--     <camelContext id="camel-context-2" xmlns="http://camel.apache.org/schema/spring"> -->
+<!--         <route id="route-2"> -->
+<!--             <from id="_from1" uri="timer://foo2"/> -->
+<!--             <setBody id="_setBody1"> -->
+<!--                 <simple>And Hello World from camel-contex.xml</simple> -->
+<!--             </setBody> -->
+<!--             <log id="_log1" message=">>> ${body}"/> -->
+<!--         </route> -->
+<!--     </camelContext> -->
 </beans>
