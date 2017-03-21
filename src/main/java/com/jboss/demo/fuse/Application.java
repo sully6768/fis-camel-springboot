@@ -18,12 +18,13 @@ package com.jboss.demo.fuse;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.ImportResource;
 
 /**
  * A spring-boot application that includes a Camel route builder to setup the Camel routes
  */
 @SpringBootApplication
-//@ImportResource({"classpath:spring/camel-context.xml"})
+@ImportResource({"classpath:spring/camel-context.xml"})
 public class Application extends SpringBootServletInitializer {
 
     // must have a main method spring-boot can run
